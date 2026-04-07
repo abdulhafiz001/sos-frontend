@@ -4,9 +4,10 @@ import { Menu, X } from 'lucide-react';
 
 interface NavigationProps {
   onOpenModal: () => void;
+  onOpenBuyModal: () => void;
 }
 
-const Navigation = ({ onOpenModal }: NavigationProps) => {
+const Navigation = ({ onOpenModal, onOpenBuyModal }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -148,14 +149,24 @@ const Navigation = ({ onOpenModal }: NavigationProps) => {
             ))}
           </div>
 
-          {/* Bottom CTA */}
-          <div className="pt-6 border-t border-[#1E3A5F]/30">
+          {/* Bottom CTAs */}
+          <div className="pt-6 border-t border-[#1E3A5F]/30 space-y-3">
+            <Button
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                onOpenBuyModal();
+              }}
+              className="w-full bg-[#D4AF37] hover:bg-[#C4A030] text-[#0A1628] font-semibold py-6 text-base"
+            >
+              Buy Now
+            </Button>
             <Button
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 onOpenModal();
               }}
-              className="w-full bg-[#D4AF37] hover:bg-[#C4A030] text-[#0A1628] font-semibold py-6 text-base"
+              variant="outline"
+              className="w-full border-[#1E3A5F] text-white hover:bg-[#1E3A5F]/40 font-semibold py-6 text-base"
             >
               Get Started
             </Button>

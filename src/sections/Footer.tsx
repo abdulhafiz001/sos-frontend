@@ -1,13 +1,15 @@
-import { Twitter, Github, MessageCircle, Mail, Send } from 'lucide-react';
+import { Twitter, Github, MessageCircle, Mail, Send, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface FooterProps {
   onOpenModal: () => void;
+  onOpenBuyModal: () => void;
 }
 
-const TELEGRAM_LINK = 'https://t.me/+UO-ZYQzFXopmNjEx';
+const TELEGRAM_LINK = 'https://t.me/Strategicoilsupply2';
 const X_LINK = 'https://x.com/strategicoilsup';
 
-const Footer = ({ onOpenModal }: FooterProps) => {
+const Footer = ({ onOpenModal, onOpenBuyModal }: FooterProps) => {
   const footerLinks = {
     Platform: [
       { name: 'Features', href: '#features' },
@@ -119,8 +121,23 @@ const Footer = ({ onOpenModal }: FooterProps) => {
           ))}
         </div>
 
+        {/* Buy Now strip */}
+        <div className="mt-10 sm:mt-14 p-4 sm:p-5 rounded-2xl bg-[#0D1E36]/60 border border-[#D4AF37]/15 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <p className="text-white font-semibold text-sm sm:text-base">Ready to secure your position?</p>
+            <p className="text-[#94A3B8] text-xs sm:text-sm">Get $SOS tokens before the next price surge.</p>
+          </div>
+          <Button
+            onClick={onOpenBuyModal}
+            className="bg-[#D4AF37] hover:bg-[#C4A030] text-[#0A1628] font-semibold px-6 py-4 text-sm group flex-shrink-0"
+          >
+            Buy $SOS Now
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </div>
+
         {/* Bottom */}
-        <div className="mt-10 sm:mt-14 pt-6 border-t border-[#1E3A5F]/30 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <div className="mt-6 sm:mt-8 pt-6 border-t border-[#1E3A5F]/30 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-[#64748B] text-xs sm:text-sm">
             &copy; 2026 Strategic Oil Supply. All rights reserved.
           </p>

@@ -1,7 +1,12 @@
-import { TrendingUp, Vote, Wallet, Lock, Star, ArrowRightLeft, ShoppingCart, Send, Coins, Flame } from 'lucide-react';
+import { TrendingUp, Vote, Wallet, Lock, Star, ArrowRightLeft, ShoppingCart, Send, Coins, Flame, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { useReveal } from '@/hooks/use-reveal';
 
-const Tokenomics = () => {
+interface TokenomicsProps {
+  onOpenBuyModal: () => void;
+}
+
+const Tokenomics = ({ onOpenBuyModal }: TokenomicsProps) => {
   const ref = useReveal();
 
   const utilities = [
@@ -197,6 +202,23 @@ const Tokenomics = () => {
               <TrendingUp className="w-4 h-4 text-[#10B981]" />
               <span className="text-sm text-[#94A3B8]">Increasing scarcity <span className="text-[#10B981] font-medium">drives value</span></span>
             </div>
+          </div>
+
+          {/* Buy Now CTA */}
+          <div className="reveal-item mt-6 sm:mt-10 text-center">
+            <p className="text-white font-semibold text-lg sm:text-xl mb-1">
+              Supply is burning. Price is rising.
+            </p>
+            <p className="text-[#94A3B8] text-sm mb-4">
+              Every transaction burns tokens permanently. The earlier you buy, the more you benefit.
+            </p>
+            <Button
+              onClick={onOpenBuyModal}
+              className="bg-[#D4AF37] hover:bg-[#C4A030] text-[#0A1628] font-semibold px-8 py-5 text-base group"
+            >
+              Buy $SOS Now
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </div>
         </div>
       </div>

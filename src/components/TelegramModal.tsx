@@ -7,7 +7,7 @@ interface TelegramModalProps {
   onClose: () => void;
 }
 
-const TELEGRAM_LINK = 'https://t.me/+UO-ZYQzFXopmNjEx';
+const TELEGRAM_LINK = 'https://t.me/Strategicoilsupply2';
 
 const TelegramModal = ({ isOpen, onClose }: TelegramModalProps) => {
   useEffect(() => {

@@ -4,9 +4,10 @@ import { useReveal } from '@/hooks/use-reveal';
 
 interface AssetClassesProps {
   onOpenModal: () => void;
+  onOpenBuyModal: () => void;
 }
 
-const AssetClasses = ({ onOpenModal }: AssetClassesProps) => {
+const AssetClasses = ({ onOpenModal, onOpenBuyModal }: AssetClassesProps) => {
   const ref = useReveal();
 
   const assets = [
@@ -144,18 +145,20 @@ const AssetClasses = ({ onOpenModal }: AssetClassesProps) => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="reveal-item mt-10 sm:mt-12 text-center">
-          <p className="text-[#94A3B8] mb-4">
-            Looking for custom tokenization solutions?
+        {/* Buy Now CTA */}
+        <div className="reveal-item mt-10 sm:mt-12 p-5 sm:p-6 rounded-2xl bg-[#0D1E36]/80 border border-[#D4AF37]/20 text-center">
+          <p className="text-white font-semibold text-lg sm:text-xl mb-1">
+            Don't wait — prices won't stay this low
+          </p>
+          <p className="text-[#94A3B8] text-sm mb-4">
+            Early buyers get the best entry. Secure your $SOS tokens now before the next wave.
           </p>
           <Button
-            variant="outline"
-            onClick={onOpenModal}
-            className="border-[#D4AF37]/50 text-[#D4AF37] hover:bg-[#D4AF37]/10 hover:border-[#D4AF37]"
+            onClick={onOpenBuyModal}
+            className="bg-[#D4AF37] hover:bg-[#C4A030] text-[#0A1628] font-semibold px-8 py-5 text-base group"
           >
-            Contact Our Team
-            <ArrowRight className="ml-2 w-4 h-4" />
+            Buy $SOS Now
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
       </div>

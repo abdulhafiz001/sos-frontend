@@ -11,27 +11,32 @@ import Roadmap from './sections/Roadmap';
 import CTA from './sections/CTA';
 import Footer from './sections/Footer';
 import TelegramModal from './components/TelegramModal';
+import BuyModal from './components/BuyModal';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBuyModalOpen, setIsBuyModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+  const openBuyModal = () => setIsBuyModalOpen(true);
+  const closeBuyModal = () => setIsBuyModalOpen(false);
 
   return (
     <div className="min-h-screen bg-[#0A1628]">
-      <Navigation onOpenModal={openModal} />
+      <Navigation onOpenModal={openModal} onOpenBuyModal={openBuyModal} />
       <main>
-        <Hero onOpenModal={openModal} />
+        <Hero onOpenModal={openModal} onOpenBuyModal={openBuyModal} />
         <Features />
-        <AssetClasses onOpenModal={openModal} />
+        <AssetClasses onOpenModal={openModal} onOpenBuyModal={openBuyModal} />
         <Technology />
         <GlobalNetwork />
-        <Tokenomics />
+        <Tokenomics onOpenBuyModal={openBuyModal} />
         <Roadmap />
         <CTA onOpenModal={openModal} />
       </main>
-      <Footer onOpenModal={openModal} />
+      <Footer onOpenModal={openModal} onOpenBuyModal={openBuyModal} />
       <TelegramModal isOpen={isModalOpen} onClose={closeModal} />
+      <BuyModal isOpen={isBuyModalOpen} onClose={closeBuyModal} />
     </div>
   );
 }

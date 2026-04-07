@@ -4,9 +4,10 @@ import { ArrowRight, TrendingUp, Globe, Shield } from 'lucide-react';
 
 interface HeroProps {
   onOpenModal: () => void;
+  onOpenBuyModal: () => void;
 }
 
-const Hero = ({ onOpenModal }: HeroProps) => {
+const Hero = ({ onOpenModal, onOpenBuyModal }: HeroProps) => {
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -97,10 +98,11 @@ const Hero = ({ onOpenModal }: HeroProps) => {
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-[#1E3A5F] text-white hover:bg-[#1E3A5F]/40 px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-lg"
+                onClick={onOpenBuyModal}
+                className="border-[#1E3A5F] border bg-[#0D1E36]/80 text-white hover:bg-[#1E3A5F]/40 hover:border-[#D4AF37]/40 px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-lg group"
               >
-                Learn More
+                Buy Now
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
 
