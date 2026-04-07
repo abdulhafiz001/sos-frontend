@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 216 50% 8%;
+    --foreground: 0 0% 100%;
+    --card: 214 52% 12%;
+    --card-foreground: 0 0% 100%;
+    --popover: 214 52% 12%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 45 65% 52%;
+    --primary-foreground: 216 50% 8%;
+    --secondary: 214 52% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 214 30% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 189 100% 50%;
+    --accent-foreground: 216 50% 8%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 40% 20%;
+    --input: 214 40% 20%;
+    --ring: 45 65% 52%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: #D4AF37;
+  }
+  .text-electric {
+    color: #00D4FF;
+  }
+  .bg-navy {
+    background-color: #0A1628;
+  }
+  .bg-navy-light {
+    background-color: #0D1E36;
+  }
+  .bg-navy-mid {
+    background-color: #1E3A5F;
+  }
+  .border-navy-mid {
+    border-color: rgba(30, 58, 95, 0.5);
+  }
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.15), 0 0 60px rgba(212, 175, 55, 0.05);
+  }
+  .glow-gold-strong {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.25), 0 0 80px rgba(212, 175, 55, 0.08);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A1628;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E3A5F;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.25);
+  color: white;
+}
